@@ -1,0 +1,11 @@
+{
+  "name": "ci-demo",
+  "version": "1.0.0",
+  "description": "GitHub Actions CI 테스트 실습용",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "실습용",
+  "license": "MIT"
+}

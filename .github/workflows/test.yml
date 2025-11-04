@@ -1,0 +1,33 @@
+name: CI Test
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Test Script
+        run: npm test
+
+      - name: Save Test Result
+        run: |
+          echo "RESULT=SUCCESS" >> $GITHUB_ENV
+
+      - name: Display Result
+        run: |
+          echo "테스트 결과: $RESULT"
